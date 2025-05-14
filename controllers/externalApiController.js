@@ -1,0 +1,59 @@
+const axios = require("axios");
+const WEATHER_API_KEY = process.env.WEATHER_API_KEY;
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+exports.getWeather = async (req, res) => {
+  const city = req.query.city || "Islamabad"; // Default to Islamabad if no city is passed
+  try {
+    const response = await axios.get(
+      `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${WEATHER_API_KEY}`
+    );
+    res.json(response.data);
+  } catch (err) {
+    res
+      .status(500)
+      .json({ message: "Error fetching weather data", error: err.message });
+  }
+};
+
+exports.getQuote = async (req, res) => {
+  try {
+    const response = await axios.get("http://api.quotable.io/random");
+    res.json(response.data);
+  } catch (err) {
+    res
+      .status(500)
+      .json({ message: "Error fetching quote", error: err.message });
+  }
+};
+
+// gemini controller
+exports.generateText = async (req, res) => {
+  try {
+    const prompt = req.body.prompt || "Give me a motivational message";
+
+    const response = await axios.post(
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`,
+      {
+        contents: [
+          {
+            parts: [{ text: prompt }],
+          },
+        ],
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    const text =
+      response.data.candidates?.[0]?.content?.parts?.[0]?.text || "No response";
+    res.json({ result: text });
+  } catch (error) {
+    res.status(500).json({
+      message: "Error generating text",
+      error: error.message,
+    });
+  }
+};
