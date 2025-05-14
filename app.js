@@ -10,7 +10,7 @@ connectDB();
 
 // Route files
 const authRoutes = require('./routes/authRoutes');
-const apiRoutes = require('./routes/apiRoutes'); // we'll create this soon
+const apiRoutes = require('./routes/apiRoutes'); 
 
 const app = express();
 
