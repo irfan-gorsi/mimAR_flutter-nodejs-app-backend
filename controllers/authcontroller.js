@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 
 // Signup controller
 exports.signup = async (req, res) => {
-  const { email, password } = req.body;
+  const { email, password,fullname } = req.body;
 
   try {
     // Check if user already exists
@@ -16,7 +16,7 @@ exports.signup = async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, salt);
 
     // Save user
-    const newUser = new User({ email, password: hashedPassword });
+    const newUser = new User({ email,fullname, password: hashedPassword });
     await newUser.save();
 
     res.status(201).json({ message: 'User registered successfully' });
