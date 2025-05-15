@@ -1,35 +1,35 @@
 
 
-### 📦 Project Name: `mimAR-flutter_task-backend`
+###  Project Name: `mimAR-flutter_task-backend`
 
-### 📄 Description:
+###  Description:
 
 This is a secure and scalable **Node.js Express backend** designed to support a **Flutter mobile app**. The backend follows the **MVC (Model-View-Controller)** pattern and provides authentication, API integrations, and dynamic content delivery using external APIs.
 
 ---
 
-### 🚀 Features:
+###  Features:
 
-* ✅ **JWT Authentication**
+*  **JWT Authentication**
 
   * User **Signup** & **Login** endpoints.
   * Secure access to protected routes.
   * Token stored and used via **Postman** or **Flutter app**.
 
 
-* 🌦️ **Weather API Integration**
+*  **Weather API Integration**
 
   * Fetch current weather data for a given city.
 
-* 💬 **Random Quotes API Integration**
+*  **Random Quotes API Integration**
 
   * Display motivational or inspirational quotes.
 
-* 🤖 **Google Gemini API Integration**
+*  **Google Gemini API Integration**
 
   * AI-generated text responses based on user input (e.g., chatbot or insights).
 
-* 📁 **Modular Structure**
+*  **Modular Structure**
 
   * Follows the **MVC architecture**:
 
@@ -43,7 +43,7 @@ This is a secure and scalable **Node.js Express backend** designed to support a 
 
 ---
 
-### 🛠️ Tech Stack:
+###  Tech Stack:
 
 * **Node.js + Express.js**
 * **MongoDB + Mongoose** (or another DB)
@@ -53,7 +53,7 @@ This is a secure and scalable **Node.js Express backend** designed to support a 
 
 ---
 
-### 📂 Folder Structure:
+###  Folder Structure:
 
 ```
 mimAR-flutter_task-backend/
@@ -62,7 +62,7 @@ mimAR-flutter_task-backend/
 ├── models/                # Database schema definitions
 ├── middlewares/           # Custom middlewares (auth, validation, etc.)
 ├── postman/               # Postman collection for testing
-│   └── Flutter App Node_Backend API.postman_collection.json
+│   └── postman_api_collection.json
 ├── routes/                # API route definitions
 ├── app.js                 # Main app entry point
 ├── .env                   # Api keys etc
@@ -71,7 +71,7 @@ mimAR-flutter_task-backend/
 
 ---
 
-### 📌 How to Run:
+###  How to Run:
 
 1. **Clone the repository:**
 

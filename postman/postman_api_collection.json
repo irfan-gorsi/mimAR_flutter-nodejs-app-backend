@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "3cee67ec-2c12-4511-a30d-76df062df16f",
-		"name": "Flutter App Node_Backend API",
+		"_postman_id": "be6d5c93-6c26-4936-9b90-99c1de689eff",
+		"name": "Flutter App Node_Backend API Copy",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "38626033"
 	},
@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\":\"irfan2@gmail.com\",\r\n    \"password\":\"irfan123\"\r\n}",
+					"raw": "{   \"fullname\":\"irfan\",\r\n    \"email\":\"irfan4@gmail.com\",\r\n    \"password\":\"irfan123\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -60,7 +60,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\":\"irfan2@gmail.com\",\r\n    \"password\":\"irfan123\"\r\n}",
+					"raw": "{\r\n    \"email\":\"irfan4@gmail.com\",\r\n    \"password\":\"irfan123\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
