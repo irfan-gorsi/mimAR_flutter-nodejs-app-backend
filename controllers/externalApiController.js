@@ -2,11 +2,19 @@ const axios = require("axios");
 const WEATHER_API_KEY = process.env.WEATHER_API_KEY;
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 exports.getWeather = async (req, res) => {
-  const city = req.query.city || "Islamabad"; // Default to Islamabad if no city is passed
+  const { lat, lon } = req.query;
+
+   const city = req.query.city || "Islamabad";
+
   try {
-    const response = await axios.get(
-      `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${WEATHER_API_KEY}`
-    );
+    let url;
+    if (lat && lon) {
+      url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`;
+    } else {
+      url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${WEATHER_API_KEY}&units=metric`;
+    }
+
+    const response = await axios.get(url);
     res.json(response.data);
   } catch (err) {
     res
