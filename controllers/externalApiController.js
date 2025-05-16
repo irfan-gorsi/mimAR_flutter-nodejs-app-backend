@@ -25,12 +25,12 @@ exports.getWeather = async (req, res) => {
 
 exports.getQuote = async (req, res) => {
   try {
-    const response = await axios.get("https://api.quotable.io/random");
-    res.json(response.data);
+    const response = await axios.get("https://zenquotes.io/api/random");
+    const { q: content, a: author } = response.data[0];
+
+    res.json({ content, author });
   } catch (err) {
-    res
-      .status(500)
-      .json({ message: "Error fetching quote", error: err.message });
+    res.status(500).json({ message: "Error fetching quote", error: err.message });
   }
 };
 
