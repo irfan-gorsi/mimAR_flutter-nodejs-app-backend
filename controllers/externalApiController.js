@@ -25,7 +25,7 @@ exports.getWeather = async (req, res) => {
 
 exports.getQuote = async (req, res) => {
   try {
-    const response = await axios.get("http://api.quotable.io/random");
+    const response = await axios.get("https://api.quotable.io/random");
     res.json(response.data);
   } catch (err) {
     res
